@@ -1,0 +1,50 @@
+<view>
+  <view class="start">开始日期：{{year}}年{{month}}月{{day}}日</view>
+  <picker-view indicator-style="height: 30px;" style="width: 100%; height: 150px;" value="{{value}}" bindchange="bindChange">
+    <picker-view-column>
+      <view wx:for="{{years}}" wx:key="{{}}" style="line-height: 30px">{{item}}年</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{months}}" wx:key="{{}}" style="line-height: 30px">{{item}}月</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{days}}"  wx:key="{{}}" style="line-height: 30px">{{item}}日</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+
+<view class="gap"></view>
+
+<view>
+  <view class="end">结束日期：{{year2}}年{{month2}}月{{day2}}日</view>
+  <picker-view indicator-style="height: 30px;" style="width: 100%; height: 150px;" value="{{value2}}" bindchange="bindChange2">
+    <picker-view-column>
+      <view wx:for="{{years2}}" wx:key="{{}}" style="line-height: 30px">{{item}}年</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{months2}}" wx:key="{{}}" style="line-height: 30px">{{item}}月</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{days2}}" wx:key="{{}}" style="line-height: 30px">{{item}}日</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+
+<view class="register">
+    <form bindsubmit="itemSubmit1" report-submit="true">
+      <button formType="submit" type='primary' size='mini' class="click2 "> 收入 </button>
+    </form>
+    <form bindsubmit="itemSubmit2" report-submit="true">
+      <button formType="submit" type='primary' size='mini' class="click2 "> 消费 </button>
+    </form>
+     <form bindsubmit="itemSubmit3" report-submit="true">
+      <button formType="submit" type='primary' size='mini' class="click2 "> 盈利 </button>
+    </form>
+     <form bindsubmit="itemSubmit4" report-submit="true">
+      <button formType="submit" type='primary' size='mini' class="click2 "> 总额 </button>
+    </form>
+  </view>
+
+  <view wx:if="{{flag1}}">
+  收入增加共计：{{income}}
+  </view>

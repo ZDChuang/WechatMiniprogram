@@ -1,0 +1,12 @@
+<view class="page-body">
+  <view class="page-section">
+    <view class="textarea-wrp">
+      <textarea bindinput="input" auto-height='true' show-confirm-bar='true' placeholder='请输入' maxlength='300' />
+    </view>
+  </view>
+  <view class='submit'>
+    <form bindsubmit="itemSubmit" report-submit="true">
+      <button formType="submit" type='warn' size='mini' class="click "> 提交</button>
+    </form>
+  </view>
+</view>

@@ -9,12 +9,22 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
+		"nodeModules": false,
 		"autoAudits": false,
-		"checkInvalidKey": true
+		"uglifyFileName": false,
+		"checkInvalidKey": true,
+		"enhance": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.1",
-	"appid": "wx36dd5b5f4a1b5dd5",
+	"libVersion": "2.6.6",
+	"appid": "wx7d2be53e59324611",
 	"projectname": "MiniTest",
 	"debugOptions": {
 		"hidedInDevtools": []

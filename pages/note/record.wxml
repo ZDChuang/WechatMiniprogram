@@ -1,0 +1,30 @@
+<radio-group bindchange="query">
+  <label class="checkbox" wx:for="{{category}}" wx:key="key">
+    <radio value="{{item.name}}" color="{{item.color}}" checked="{{item.checked}}" />{{item.value}}
+  </label>
+</radio-group>
+
+<view class="cal" wx:if="{{category[0].checked}}">
+  <view wx:for="{{all}}" data-index='{{index}}' wx:key="key">
+    <text decode="true"> {{index+1}}: {{item.content}}</text>
+    <view/>
+  </view>
+</view>
+
+<view class="cal" wx:if="{{category[1].checked}}">
+  <view wx:for="{{all}}" data-index='{{index}}' wx:key="key">
+    <text decode="true"> {{index+1}}: {{item.content}}</text>
+    <view/><view/>
+  </view>
+</view>
+
+<view class="cal" wx:if="{{category[2].checked}}">
+  <view wx:for="{{all}}" data-index='{{index}}' wx:key="key">
+    <text decode="true"> {{index+1}}: {{item.content}}</text>
+    <view/><view/>
+  </view>
+</view>
+
+<view class="cal" wx:if="{{category[1].checked}}">
+  {{recent}}
+</view>

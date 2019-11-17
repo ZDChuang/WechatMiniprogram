@@ -1,0 +1,77 @@
+<view class="all">
+  <text>温馨提示:</text>
+</view>
+
+<view class="all2">
+  <text>您可以在此页面设置需要推送的模板信息，由于微信有推送次数及推送时效的限制，您设置的信息可能无法推送。
+  </text>
+</view>
+
+<view class="Body5">推送类型</view>
+<radio-group class="radio" bindchange="pushType">>
+  <label wx:for="{{type}}" wx:key="key">
+    <radio value="{{item.name}}" checked='{{item.checked}}' />{{item.value}}
+  </label>
+</radio-group>
+
+<view class="textarea-wrp">
+  <textarea auto-focus="false" style="height: 1.5em" bindinput="bindinput" show-confirm-bar='true' placeholder='请输入推送描述' maxlength='12' />
+</view>
+
+
+<view class="Body2">推送周期</view>
+<radio-group class="radio" bindchange="pushPeriod">
+  <label wx:for="{{period}}" wx:key="key">
+    <radio value="{{item.name}}" checked='{{item.checked}}' />{{item.value}}
+  </label>
+</radio-group>
+
+<view class="week" wx:if="{{period[0].checked}}">
+  <checkbox-group class=" checkbox " bindchange="weekPush">
+    <label wx:for="{{weekPeriod}}" wx:key="key">
+      <checkbox value="{{item.name}}" checked='{{item.checked}}' />{{item.value}}
+    </label>
+  </checkbox-group>
+
+  <view class="day" wx:if="{{period[1].checked}}">
+    <radio-group class="checkbox" bindchange="dayPush">
+      <label wx:for="{{dayPeriod}}" wx:key="key">
+        <radio value="{{item.name}}" checked='{{item.checked}}' />{{item.value}}
+      </label>
+    </radio-group>
+  </view>
+</view>
+
+<view class='gap'></view>
+
+<view class="week" wx:if="{{timeChecked}}">
+  <radio-group class="checkbox" bindchange="dayPush">
+    <label wx:for="{{dayPeriod}}" wx:key="key">
+      <radio value="{{item.name}}" checked='{{item.checked}}' />{{item.value}}
+    </label>
+  </radio-group>
+</view>
+
+<view class='gap'></view>
+
+<view class="week" wx:if="{{dayPeriod[0].checked}}">
+  <picker mode="time" value="{{fixTime}}" bindchange="bindDateChange">
+    <view class="checkbox">
+      当前选择: {{fixTime}}
+    </view>
+  </picker>
+</view>
+
+<view class="week" wx:if="{{dayPeriod[1].checked}}">
+  <picker mode="selector" range='{{every}}' bindchange="bindHourChange">
+    <view class="checkbox">
+      每隔{{everyHours}}小时
+    </view>
+  </picker>
+</view>
+
+<view class="Body4 ">
+  <form bindsubmit="itemSubmit" report-submit="true">
+    <button formType="submit" type='warn' size='mini' class="click "> 提交设置 </button>
+  </form>
+</view>

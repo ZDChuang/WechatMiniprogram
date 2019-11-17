@@ -1,0 +1,6 @@
+/* pages/click/click.wxss */
+.all {
+  align-items: center;
+  color: rgb(214, 52, 139);
+  font-weight: bold;
+}

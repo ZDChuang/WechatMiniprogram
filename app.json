@@ -2,7 +2,25 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/logs/hupu"
+    "pages/logs/hupu",
+    "pages/exercise/record",
+    "pages/exercise/display",
+    "pages/todo/record",
+    "pages/note/record",
+    "pages/note/feedback",
+    "pages/note/add",
+    "pages/economy/record",
+    "pages/economy/feedback",
+    "pages/economy/display",
+    "pages/economy/line",
+    "pages/economy/display2",
+    "pages/push/record",
+    "pages/push/feedback",
+    "pages/push/display",
+    "pages/charts/total",
+    "pages/charts/other",
+    "pages/charts/pie",
+    "pages/charts/exercise"
   ],
   "window": {
     "backgroundTextStyle": "light",

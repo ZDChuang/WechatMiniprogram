@@ -1,9 +1,10 @@
 //logs.js
 const util = require('../../utils/util.js')
-
+var app = getApp();
 Page({
   data: {
-    logs: []
+    logs: [],
+    mess:'message'
   },
   onLoad2: function () {
     this.setData({
@@ -14,23 +15,25 @@ Page({
   },
   onLoad: function () {
     var that = this
-    // console.log("begin...")
     wx.request({
-      url: 'http://dech.tech/blog2/first',
+      url: app.globalData.address + '/blog2/first',
       data: {
-        user: '001',
-        pwd: 'abc'
       },
       method: 'GET',
       header: {
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        console.log(res.data)
-        console.log('----log---onLoad---')
-        that.setData({ logs: res.data})
+        that.setData({ 
+          mess: res.statusCode,
+          logs: res.data
+          })
       },
       fail: function (res) {
+        that.setData({
+          mess: res.statusCode,
+          logs: res.request
+        })
         console.log(".....fail.....");
       }
     })

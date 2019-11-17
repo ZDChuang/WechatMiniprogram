@@ -1,14 +1,35 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="minites"> 获取头像昵称 </button>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
   <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+    <text class="user-motto">{{userInfo.nickName}}，欢迎你</text>
   </view>
+
+  <view class="space">
+  </view>
+
+  <form bindsubmit="exercise" report-submit="true">
+    <button formType="submit" type='primary' size='mini' class="click "> 健身 </button>
+  </form>
+
+  <form bindsubmit="economy" report-submit="true">
+    <button formType="submit" type='primary' size='mini' class="click "> 记账 </button>
+  </form>
+
+  <form bindsubmit="push" report-submit="true">
+    <button formType="submit" type='primary' size='mini' class="click "> 推送 </button>
+  </form>
+
+  <form bindsubmit="note" report-submit="true">
+    <button formType="submit" type='primary' size='mini' class="click "> 备忘录 </button>
+  </form>
+
+  <form bindsubmit="todo" report-submit="true">
+    <button formType="submit" type='warn' size='mini' class="click "> TODO </button>
+  </form>
 </view>
-<!-- <web-view src="http://baidu.com"> </web-view> -->

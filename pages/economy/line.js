@@ -4,48 +4,20 @@ const app = getApp()
 
 Page({
   data: {
-    motto: ' ，欢迎你',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  //事件处理函数
-  bindViewTap: function() {
+  getTotal: function () {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../charts/total',
     })
   },
-  exercise: function(e) {
+  exercise: function (e) {
     this.getFormId(e)
     wx.navigateTo({
       url: '../exercise/record',
     })
   },
-  economy: function (e) {
-    this.getFormId(e)
-    wx.navigateTo({
-      url: '../economy/record',
-    })
-  },
-  todo: function (e) {
-    this.getFormId(e)
-    wx.navigateTo({
-      url: '../todo/record',
-    })
-  },
-  note: function (e) {
-    this.getFormId(e)
-    wx.navigateTo({
-      url: '../note/record',
-    })
-  },
-  push: function (e) {
-    this.getFormId(e)
-    wx.navigateTo({
-      url: '../push/record',
-    })
-  },
-  onLoad: function() {
+ 
+  onLoad: function () {
     if (app.globalData.userInfo) {
       wx.setStorageSync('userinfo1', app.globalData.userInfo)
       console.log("userinfo------iiiiii")
@@ -85,7 +57,7 @@ Page({
       })
     }
   },
-  getUserInfo: function(e) {
+  getUserInfo: function (e) {
     // console.log(e)
     console.log("getUserInfo...")
     app.globalData.userInfo = e.detail.userInfo
@@ -99,7 +71,7 @@ Page({
       app.sendUserInfo(app.globalData.address)
     }
   },
-  getFormId: function(e) {
+  getFormId: function (e) {
     this.info = wx.getStorageSync('userinfo2')
     wx.request({
       url: app.globalData.address + '/receive/formid',
@@ -111,8 +83,8 @@ Page({
       header: {
         'content-type': 'application/json' // 默认值
       },
-      success: function(res) {},
-      fail: function(res) {}
+      success: function (res) { },
+      fail: function (res) { }
     })
   }
 })

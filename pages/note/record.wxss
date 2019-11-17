@@ -1,0 +1,68 @@
+/* pages/click/click.wxss */
+.all {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #EE1289;
+  font-weight: bold;
+}
+.checkbox {
+  color: #EE1289;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.cal1 {  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #EE1289;
+  font-weight: bold;
+}
+.Body3 {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #CD69C9;
+  font-size: 20px;
+  font-weight: bold;
+}
+.Body5 {
+  margin-top: 40px;
+  flex-direction: column;
+  display: flex;
+  color:#9ACD32;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+.Body4 {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  color:#8B6508;
+  align-items: center;
+  font-size: 18px;
+  line-height: 55px;
+}
+
+.slider {
+  color: #fa8072;
+}
+
+.radio {
+  color: #737373;
+  line-height: 32px;
+  align-items: center;
+}
+.radio2 {
+  color: #A1A1A1;
+  align-items: center;
+}
+.register{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

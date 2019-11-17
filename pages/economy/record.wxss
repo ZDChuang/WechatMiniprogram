@@ -1,0 +1,196 @@
+/* pages/click/click.wxss */
+.all {
+  display:inline-block;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #EE1289;
+  font-weight: bold;
+}
+.all2 {
+  display:inline-block;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #FF7F50;
+  font-weight: bold;
+}
+.gap {
+  height: 13px;
+}
+.wechat {
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 31px;
+  color: rgb(19, 161, 55);
+  font-weight: bold;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+}
+
+.input1 {
+  width: 115px;
+  height: 22px;
+  border: 1px solid rgb(19, 161, 55);
+  border-radius: 5px;
+  font-weight: normal;
+}
+.input12 {
+  margin-left: 20px;
+  width: 95px;
+  height: 22px;
+  border: 1px solid rgb(19, 161, 55);
+  border-radius: 5px;
+  font-weight: normal;
+}
+
+.alipay {
+  margin-top: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 31px;
+  color: #108ee9 ;
+  font-weight: bold;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+}
+
+.input2 {
+  width: 115px;
+  height: 22px;
+  border: 1px dotted  #108ee9 ;
+  border-radius: 5px;
+  font-weight: normal;
+}
+.input22 {
+  margin-left: 20px;
+  width: 95px;
+  height: 22px;
+  border: 1px dotted  #108ee9 ;
+  border-radius: 5px;
+  font-weight: normal;
+}
+.recent {
+  font-size: 10px;
+  font-weight: normal;
+}
+.recent2 {
+  font-size: 13px;
+  font-weight: normal;
+}
+.cmb {
+  margin-top: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 31px;
+  color: #FF6347;
+  font-weight: bold;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+}
+
+.input3 {
+  width: 115px;
+  border: 1px dashed #FF6347;
+  border-radius: 5px;
+  font-weight: normal;
+}
+.input32 {
+  margin-left: 20px;
+  width: 95px;
+  height: 22px;
+  border: 1px dashed #FF6347;
+  border-radius: 5px;
+  font-weight: normal;
+}
+.zz {
+  margin-top: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 31px;
+  color: #EEC900;
+  font-weight: bold;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+}
+
+.input4 {
+  width: 115px;
+  height: 22px;
+  border: 1px dotted #EEC900;
+  border-radius: 5px;
+  font-weight: normal;
+}
+.input42 {
+  margin-left: 20px;
+  width: 95px;
+  height: 22px;
+  border: 1px dotted #EEC900;
+  border-radius: 5px;
+  font-weight: normal;
+}
+.money {
+  margin-top: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 31px;
+  color: #EE82EE;
+  font-weight: bold;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+}
+
+.input5 {
+  width: 115px;
+  height: 22px;
+  border: 1px solid #EE82EE;
+  border-radius: 5px;
+  font-weight: normal;
+}
+.input52 {
+  margin-left: 20px;
+  width: 95px;
+  height: 22px;
+  border: 1px solid #EE82EE;
+  border-radius: 5px;
+  font-weight: normal;
+}
+.income {
+  margin-top: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 31px;
+  color:  rgb(36, 206, 13);
+  font-weight: bold;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+}
+.input6 {
+  width: 115px;
+  border: 1px dashed rgb(36, 206, 13);
+  border-radius: 5px;
+  font-weight: normal;
+}
+.register {
+  margin-top: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 70px;
+  margin-right: 10px;
+}
+.click2 {
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+  color: #ee1289;
+  font-weight: bold;
+  justify-content: flex-start;
+}

@@ -1,12 +1,8 @@
-<!--logs.wxml
-<view class="container log-list">
-  <text class="log-item">{{logs}}</text>
-</view>-->
-<view wx:for="{{logs}}" wx-for-index="index" wx-for-item="item">
-  <view class="id">ID: {{item.id}}</view>
+<view class="hot">Hot Posts</view>
+<view wx:for="{{logs}}" wx:key="item">
   <view class="age">{{item.url}}</view>
   <view class="size">
     <navigator  url='/pages/logs/hupu?pp={{item.url}}'>{{item.post_name}}</navigator>
   </view>
-  <view>-----------</view>
+  <view>-----------------------</view>
 </view>   

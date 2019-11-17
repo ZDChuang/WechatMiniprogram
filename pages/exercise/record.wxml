@@ -1,0 +1,42 @@
+<view class="all">
+  <form bindsubmit="findall" report-submit="true">
+  <switch bindchange='findall' color="#EE1289" checked='{{checked}}'/>数据统计
+  </form>
+</view>
+
+<view class="Body">锻炼部位</view>
+<radio-group class="radio" bindchange="exerciseBody">
+  <label wx:for="{{items}}" wx:key="key">
+    <radio value="{{item.name}}" checked='{{item.checked}}' />{{item.value}}
+  </label>
+</radio-group>
+
+<view class="Body2">时长</view>
+<view class="slider">
+  <view class="body-view">
+    <slider bindchange="exerciseTime" min="0" max="150" value="60" block-size="15" step="5" block-color='red' activeColor='red' show-value/>
+  </view>
+</view>
+
+<view class="Body5">体重</view>
+<view class="slider2">
+  <view class="body-view">
+    <slider bindchange="exerciseWeight" min="45" max="80" value="65" block-size="15" step="0.5" block-color='#9F79EE' activeColor='#9F79EE' backgroundColor="#ABABAB" show-value/>
+  </view>
+</view>
+
+<view class="Body3">地点</view>
+<radio-group class="radio2" bindchange="exerciseType">
+  <label wx:for="{{addresses}}" wx:key="key">
+    <radio value="{{item.name}}" checked='{{item.checked}}' />{{item.value}}
+  </label>
+</radio-group>
+
+
+<view class="Body4">时间：{{nowTime}}</view>
+
+<view class="register">
+  <form bindsubmit="itemSubmit" report-submit="true">
+    <button formType="submit" type='primary' size='mini' class="click "> 打卡 </button>
+  </form>
+</view>

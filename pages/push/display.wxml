@@ -1,0 +1,16 @@
+<view class="Body">数据统计</view>
+
+<view class="c">锻炼总天数：{{days}}天</view>
+<view class="c">锻炼总时长：{{hours}}小时</view>
+
+<view class="Body3">锻炼部位</view>
+<view class="a">二三头肌：{{arm}}</view>
+<view class="a">胸肌：{{chest}}</view>
+<view class="a">腹肌：{{belly}}</view>
+<view class="a">腿：{{leg}}</view>
+<view class="a">背：{{back}}</view>
+
+<view class="Body4">锻炼地点</view>
+<view class="a">健身房：{{gym}}</view>
+<view class="a">公园：{{park}}</view>
+<view class="a">家：{{home}}</view>

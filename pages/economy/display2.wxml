@@ -1,0 +1,142 @@
+<view class="pick">
+  <picker mode="date" value="{{date}}" fields="month" start="2018-01-01" end="2021-12-01" bindchange="bindDateChange">
+
+    <view class="picker">
+      > {{year}}
+
+      <view class="picker2">
+        年
+      </view>
+      <view class="picker">
+        {{month}}
+      </view>
+      <view class="picker2">
+        月
+      </view>
+    </view>
+  </picker>
+</view>
+
+<view wx:if="{{flag}}">
+  <view class="table">
+    <view class="tr bg-w">
+      <view class="th">分类</view>
+      <view class="th">金额</view>
+      <view class="th ">收益</view>
+    </view>
+    <block wx:for="{{listData}}" wx:key="{{name}}">
+      <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+        <view class="td">{{item.name}}</view>
+        <view class="td">{{item.money}}</view>
+        <view class="td">{{item.benifit}}</view>
+      </view>
+      <view class="tr" wx:else>
+        <view class="td">{{item.name}}</view>
+        <view class="td">{{item.money}}</view>
+        <view class="td">{{item.benifit}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="Body"></view>
+  <view class="total">数据登记日期：{{date2}}</view>
+</view>
+<view class="total2" wx:else>
+  该月份无数据，请选择其他年月。
+  <view class="gap"></view>
+</view>
+
+
+
+<view class="money0">
+  <text decode="true">总消费：{{consume0}}</text>
+</view>
+<view class="money">
+<text decode="true">登记日期：</text>
+  <input class="input1" bindinput="inputReceive" data-model="consumeDate" type="digit" value="{{consumeDate}}" maxlength="10" placeholder-style="color:#432;" />
+</view>
+<view class="money">
+<input class="input0" bindinput="inputReceive" data-model="note1" type="text" value="{{note1}}" maxlength="15" placeholder-style="color:#432;" />
+  <input class="input1" bindinput="inputReceive" data-model="consume1" type="digit" value="{{consume1}}" maxlength="10" placeholder-style="color:#432;" />
+</view>
+
+<view class="money">
+  <input class="input0" bindinput="inputReceive" data-model="note2" type="text" value="{{note2}}" maxlength="15" placeholder-style="color:#432;" />
+  <input class="input1" bindinput="inputReceive" data-model="consume2" type="digit" value="{{consume2}}" maxlength="10" placeholder-style="color:#666;" />
+</view>
+
+<view class="money">
+  <input class="input0" bindinput="inputReceive" data-model="note3" type="text" value="{{note3}}" maxlength="15" placeholder-style="color:#432;" />
+  <input class="input1" bindinput="inputReceive" data-model="consume3" type="digit" value="{{consume3}}" maxlength="10" placeholder-style="color:#001;" />
+</view>
+
+<view class="money">
+  <input class="input0" bindinput="inputReceive" data-model="note4" type="text" value="{{note4}}" maxlength="15" placeholder-style="color:#432;" />
+  <input class="input1" bindinput="inputReceive" data-model="consume4" type="digit" value="{{consume4}}" maxlength="10" placeholder-style="color:#001;" />
+</view>
+<view class="money">
+  <input class="input0" bindinput="inputReceive" data-model="note5" type="text" value="{{note5}}" maxlength="15" placeholder-style="color:#432;" />
+  <input class="input1" bindinput="inputReceive" data-model="consume5" type="digit" value="{{consume5}}" maxlength="10" placeholder-style="color:#001;" />
+</view>
+<view class="money">
+  <input class="input0" bindinput="inputReceive" data-model="note6" type="text" value="{{note6}}" maxlength="15" placeholder-style="color:#432;" />
+  <input class="input1" bindinput="inputReceive" data-model="consume6" type="digit" value="{{consume6}}" maxlength="10" placeholder-style="color:#001;" />
+</view>
+
+<view class="money">
+  <input class="input0" bindinput="inputReceive" data-model="note7" type="text" value="{{note7}}" maxlength="15" placeholder-style="color:#432;" />
+  <input class="input1" bindinput="inputReceive" data-model="consume7" type="digit" value="{{consume7}}" maxlength="10" placeholder-style="color:#001;" />
+</view>
+
+<view class="register1">
+<form bindsubmit="findConsume2" report-submit="true">
+    <button formType="submit" type='primary' size='mini' class="click "> query </button>
+  </form>
+  <form bindsubmit="save" report-submit="true">
+    <button formType="submit" type='primary' size='mini' class="click "> submit </button>
+  </form>  
+  <form bindsubmit="percent" report-submit="true">
+    <button formType="submit" type='primary' size='mini' class="click "> percent </button>
+  </form>
+</view>
+
+<view class='gap'/>
+
+<view class="pick">
+  <picker mode="date" value="{{date}}" fields="day" start="2018-01-01" end="2021-12-01" bindchange="bindDateChange1">
+
+    <view class="picker3">
+      <view class="picker4">开始日期：</view>
+      {{start}}
+    </view>
+  </picker>
+</view>
+
+<view class="pick">
+  <picker mode="date" value="{{date}}" fields="day" start="2018-01-01" end="2021-12-01" bindchange="bindDateChange2">
+
+    <view class="picker3">
+      <view class="picker4">结束日期：</view>
+      {{end}}
+    </view>
+  </picker>
+</view>
+
+<view class="gap"></view>
+<checkbox-group bindchange="calculate">
+  <label class="checkbox" wx:for="{{category}}" wx:key="key">
+    <checkbox value="{{item.name}}" color="{{item.color}}" checked="{{item.checked}}" />{{item.value}}
+  </label>
+</checkbox-group>
+
+<view class="cal" wx:if="{{category[0].checked}}">
+  收入共计：{{income}}元
+</view>
+<view class="cal" wx:if="{{category[1].checked}}">
+  消费共计：{{consume}}元
+</view>
+<view class="cal" wx:if="{{category[2].checked}}">
+  收益共计：{{benifit}}元
+</view>
+<view class="cal" wx:if="{{category[3].checked}}">
+  总额共计增加：{{total}}元
+</view>
