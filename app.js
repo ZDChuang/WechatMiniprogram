@@ -99,6 +99,6 @@ App({
     hasInfo: false,
     // address: 'http://localhost:8080',
     address: 'http://192.168.31.165:8080',
-    // address: 'https://dech.tech',
+    // address: 'https://test.test',
   }
 })
