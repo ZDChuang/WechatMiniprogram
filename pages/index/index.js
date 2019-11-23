@@ -6,6 +6,7 @@ Page({
   data: {
     motto: ' ，欢迎你',
     userInfo: {},
+    display: '',
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
@@ -66,6 +67,7 @@ Page({
         console.log("--------callback---------")
         this.setData({
           userInfo: res.userInfo,
+          display: res.userInfo.nickName + '，欢迎你',
           hasUserInfo: true
         })
 
@@ -78,6 +80,7 @@ Page({
           app.globalData.userInfo = res.userInfo
           this.setData({
             userInfo: res.userInfo,
+            display: res.userInfo.nickName + '，欢迎你',
             hasUserInfo: true
           })
           console.log(app.data)
@@ -90,8 +93,12 @@ Page({
     console.log("getUserInfo...")
     app.globalData.userInfo = e.detail.userInfo
     app.globalData.hasInfo = true
+    if(e.detail.userInfo == null){
+      return;
+    }
     this.setData({
       userInfo: e.detail.userInfo,
+      display: e.detail.userInfo.nickName + '，欢迎你',
       hasUserInfo: true,
     })
     wx.setStorageSync('userinfo1', e.detail.userInfo)

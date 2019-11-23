@@ -1,68 +1,70 @@
 <view class="all">
   <form bindsubmit="getTotal" report-submit="true">
-  <switch bindchange='getTotal' color="#EE1289" checked='{{checked1}}'/>总资产
+    <switch bindchange='getTotal' color="#EE1289" checked='{{checked1}}' />总资产
   </form>
 </view>
 
 <view class="all2">
-<text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+  <text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
   <form bindsubmit="getOther" report-submit="true">
-  <switch bindchange='getOther' color="#FF7F50" checked='{{checked2}}'/>收入消费
+    <switch bindchange='getOther' color="#FF7F50" checked='{{checked2}}' />收入消费
   </form>
 </view>
+
 <view class="gap"></view>
+
 <form bindsubmit="formSubmit">
   <view class="wechat">微信零钱：
-    <input class="input1"  bindinput="inputReceive" data-model="wchange" type="digit" value="" maxlength="10"  placeholder-style="color:#432;" />
+    <input class="input1" bindinput="inputReceive" data-model="wchange" type="digit" value="" maxlength="10" placeholder-style="color:#432;" />
   </view>
 
   <view class="wechat">
     <text decode="true">&nbsp;&nbsp;&nbsp;理财通：</text>
-    <input class="input1"  bindinput="inputReceive" data-model="wlicai" type="digit" value="" maxlength="10"  placeholder-style="color:#432;" />
-    <input class="input12" bindinput="inputReceive" data-model="wbenifit" type="text" value="" maxlength="10"  placeholder-style="color:#432;" />
+    <input class="input1" bindinput="inputReceive" data-model="wlicai" type="digit" value="" maxlength="10" placeholder-style="color:#432;" />
+    <input class="input12" bindinput="inputReceive" data-model="wbenifit" type="text" value="" maxlength="10" placeholder-style="color:#432;" />
   </view>
 
   <view class="gap"></view>
 
   <view class="alipay">
     <text decode="true">&nbsp;&nbsp;&nbsp;支付宝：</text>
-    <input class="input2" bindinput="inputReceive" data-model="alipay" type="digit" value="" maxlength="10"  placeholder-style="color:#432;" />
-    <input class="input22" bindinput="inputReceive" data-model="abenifit" type="text" value="" maxlength="10"  placeholder-style="color:#432;" />
+    <input class="input2" bindinput="inputReceive" data-model="alipay" type="digit" value="" maxlength="10" placeholder-style="color:#432;" />
+    <input class="input22" bindinput="inputReceive" data-model="abenifit" type="text" value="" maxlength="10" placeholder-style="color:#432;" />
   </view>
 
   <view class="alipay">
     <text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;花呗：</text>
-    <input class="input2" bindinput="inputReceive" data-model="ahuabei" type="text" value="" maxlength="10"  placeholder-style="color:#432;" />
+    <input class="input2" bindinput="inputReceive" data-model="ahuabei" type="text" value="" maxlength="10" placeholder-style="color:#432;" />
   </view>
 
   <view class="gap"></view>
 
   <view class="cmb">
     <text decode="true">招商银行：</text>
-    <input class="input3" bindinput="inputReceive" data-model="cmb" type="digit" value="" maxlength="10"  placeholder-style="color:#432;" />
-    <input class="input32" bindinput="inputReceive" data-model="cbenifit" type="text" value="" maxlength="10"  placeholder-style="color:#432;" />
+    <input class="input3" bindinput="inputReceive" data-model="cmb" type="digit" value="" maxlength="10" placeholder-style="color:#432;" />
+    <input class="input32" bindinput="inputReceive" data-model="cbenifit" type="text" value="" maxlength="10" placeholder-style="color:#432;" />
   </view>
 
   <view class="cmb">
     <text decode="true">&nbsp;&nbsp;&nbsp;信用卡：</text>
-    <input class="input3" bindinput="inputReceive" data-model="ccrd" type="text" value="" maxlength="10"  placeholder-style="color:#432;" />
+    <input class="input3" bindinput="inputReceive" data-model="ccrd" type="text" value="" maxlength="10" placeholder-style="color:#432;" />
   </view>
 
 
   <view class="cmb">基金理财：
-    <input class="input3" bindinput="inputReceive" data-model="cjijin" type="digit" value="" maxlength="10"  placeholder-style="color:#432;" />
-    <input class="input32" bindinput="inputReceive" data-model="sbenifit" type="text" value="" maxlength="10"  placeholder-style="color:#432;" />
+    <input class="input3" bindinput="inputReceive" data-model="cjijin" type="digit" value="" maxlength="10" placeholder-style="color:#432;" />
+    <input class="input32" bindinput="inputReceive" data-model="sbenifit" type="text" value="" maxlength="10" placeholder-style="color:#432;" />
   </view>
 
   <view class="gap"></view>
 
   <view class="zz">招招理财：
-    <input class="input4" bindinput="inputReceive" data-model="zz" type="digit" value="" maxlength="10"  placeholder-style="color:#432;" />
+    <input class="input4" bindinput="inputReceive" data-model="zz" type="digit" value="" maxlength="10" placeholder-style="color:#432;" />
   </view>
 
   <view class="zz">平安证券：
-    <input class="input4" bindinput="inputReceive" data-model="zpingan" type="digit" value="" maxlength="10"  placeholder-style="color:#432;" />
-    <input class="input42" bindinput="inputReceive" data-model="pbenifit" type="text" value="" maxlength="10"  placeholder-style="color:#432;" />
+    <input class="input4" bindinput="inputReceive" data-model="zpingan" type="digit" value="" maxlength="10" placeholder-style="color:#432;" />
+    <input class="input42" bindinput="inputReceive" data-model="pbenifit" type="text" value="" maxlength="10" placeholder-style="color:#432;" />
   </view>
 
 
@@ -70,24 +72,29 @@
 
   <view class="money">
     <text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现金：</text>
-    <input class="input5" bindinput="inputReceive" data-model="money" type="digit" value="" maxlength="10"  placeholder-style="color:#432;" />
+    <input class="input5" bindinput="inputReceive" data-model="money" type="digit" value="" maxlength="10" placeholder-style="color:#432;" />
   </view>
 
   <view class="money">
     <text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欠款：</text>
-    <input class="input5" bindinput="inputReceive" data-model="mqian" type="text" value="" maxlength="10"  placeholder-style="color:#432;" />
+    <input class="input5" bindinput="inputReceive" data-model="mqian" type="text" value="" maxlength="10" placeholder-style="color:#432;" />
   </view>
   <view class="money">
     <text decode="true">&nbsp;&nbsp;&nbsp;公积金：</text>
-    <input class="input5" bindinput="inputReceive" data-model="fund" type="digit" value="" maxlength="10"  placeholder-style="color:#432;" />
+    <input class="input5" bindinput="inputReceive" data-model="fund" type="digit" value="" maxlength="10" placeholder-style="color:#432;" />
   </view>
 
-    <view class="gap"></view>
+  <view class="gap"></view>
 
   <view class="income">
     <text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;收入：</text>
-    <input class="input6" bindinput="inputReceive" data-model="income" type="text" value="" maxlength="50"  placeholder-style="color:#432;" />
-    <view class="recent"><text decode="true">&nbsp;&nbsp;&nbsp;最近登记日期：</text><view class="recent2"><text decode="true">&nbsp;&nbsp;{{recentDate}}</text></view></view>
+    <input class="input6" bindinput="inputReceive" data-model="income" type="text" value="" maxlength="50" placeholder-style="color:#432;" />
+    <view class="recent">
+      <text decode="true">&nbsp;&nbsp;&nbsp;最近登记日期：</text>
+      <view class="recent2">
+        <text decode="true">&nbsp;&nbsp;{{recentDate}}</text>
+      </view>
+    </view>
   </view>
 
   <view class="register">

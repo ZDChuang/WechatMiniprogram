@@ -2,22 +2,7 @@ const util = require('../../utils/util.js')
 var app = getApp();
 Page({
   onLoad: function() {
-    var t = this
-    this.info = wx.getStorageSync('userinfo2')
-    wx.request({
-      url: app.globalData.address + '/send/rule',
-      data: {
-        openid: this.info.openid,
-      },
-      method: 'GET',
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function(res) {
-        console.log(res.data[0][0])
-      },
-      fail: function(res) {}
-    })
+    this.query()
   },
   data: {
     type2: '',
@@ -112,7 +97,15 @@ Page({
     fixTime: '00:00',
     every: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     everyHours: 0,
-    input: ''
+    input: '',
+    listData: null,
+    listData2: [{
+      "name": '推送状态',
+    }, {
+      "name": '推送周期',
+    }, {
+      "name": '推送时间',
+    }, ],
   },
 
   bindDateChange: function(e) {
@@ -259,7 +252,92 @@ Page({
       })
     }
   },
+
+  query: function() {
+    var t = this
+    this.info = wx.getStorageSync('userinfo2')
+    wx.request({
+      url: app.globalData.address + '/send/rule',
+      data: {
+        openid: this.info.openid,
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function(res) {
+        if (res.data.length) {
+          t.setData({
+            listData: res.data,
+          })
+        }
+      },
+      fail: function(res) {}
+    })
+  },
+
+  itemSubmit2: function(e) {
+    var t = this
+    this.saveFormid(e)
+    this.info = wx.getStorageSync('userinfo2')
+
+    wx.request({
+      url: app.globalData.address + '/receive/rule/close',
+      data: {
+        openid: this.info.openid,
+        type: this.data.type2,
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function(res) {
+        if (res.data == 0) {
+          wx.showToast({
+            title: '关闭成功',
+            icon: 'none',
+            duration: 2000
+          })
+          t.query()
+        } else if (res.data == -1) {
+          wx.showToast({
+            title: '请选择要关闭的类型',
+            icon: 'none',
+            duration: 2000
+          })
+        } else if (res.data == 1) {
+          wx.showToast({
+            title: '该推送类型不存在',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      }
+    })
+  },
+
+  saveFormid: function(e) {
+    this.info = wx.getStorageSync('userinfo2')
+    if (e.detail.formId != null && typeof(e.detail.formId) != "undefined") {
+      wx.request({
+        url: app.globalData.address + '/receive/formid',
+        data: {
+          openId: this.info.openid,
+          formId: e.detail.formId
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success: function(res) {},
+        fail: function(res) {}
+      })
+    }
+  },
+
   itemSubmit: function(e) {
+    var t = this
+    this.saveFormid(e)
     this.info = wx.getStorageSync('userinfo2')
 
     wx.request({
@@ -285,12 +363,14 @@ Page({
             icon: 'none',
             duration: 2000
           })
+          t.query()
         } else if (res.data == 1) {
           wx.showToast({
             title: '修改成功',
             icon: 'none',
             duration: 2000
           })
+          t.query()
         } else if (res.data == -2) {
           wx.showToast({
             title: '信息不完整',
