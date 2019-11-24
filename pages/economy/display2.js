@@ -527,10 +527,12 @@ Page({
 
   percent: function() {
     wx.setStorageSync('consumeDate', this.data.consumeDate)
-    wx.navigateTo({
-      url: '../charts/pie',
-      // url: '../charts/pie?data=' + JSON.stringify(this.data.consumeDate),
-    })
+    if (this.data.consumeDate > 2000) {
+      wx.navigateTo({
+        url: '../charts/pie',
+        // url: '../charts/pie?data=' + JSON.stringify(this.data.consumeDate),
+      })
+    }
   },
 
   save: function() {

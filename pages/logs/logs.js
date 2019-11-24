@@ -13,7 +13,7 @@ Page({
       })
     })
   },
-  onLoad: function () {
+  onLoad3: function () {
     var that = this
     wx.request({
       url: app.globalData.address + '/blog2/first',

@@ -1,8 +1,10 @@
-<view class="hot">Hot Posts</view>
-<view wx:for="{{logs}}" wx:key="item">
+<view class="hot">-----------------------</view>
+<view class="hot">糟糕，这里什么也没有🤣</view>
+<view class="hot">-----------------------</view>
+<!-- <view wx:for="{{logs}}" wx:key="item">
   <view class="age">{{item.url}}</view>
   <view class="size">
     <navigator  url='/pages/logs/hupu?pp={{item.url}}'>{{item.post_name}}</navigator>
   </view>
   <view>-----------------------</view>
-</view>   
+</view>    -->
